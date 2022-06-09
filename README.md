@@ -4,7 +4,7 @@ Challenge project with two solutions.
 
 Example
 -------
-Open [exmpale.php](https://github.com/picamator/trappist-1-e/doc/example.php) to see usage.
+Open [exmpale.php](/doc/example.php) to see usage.
 
 ToDo
 ----
