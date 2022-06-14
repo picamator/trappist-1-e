@@ -35,6 +35,21 @@ class Trappist1eFacadeTest extends TestCase
     }
 
     /**
+     * @dataProvider emptyDataProvider
+     *
+     * @param int $limit
+     *
+     * @return void
+     */
+    public function testEmptyQuickSolution(int $limit): void
+    {
+        $expected = [];
+
+        $actual = $this->facade->runQuickSolution($limit);
+        $this->assertOutput($actual, $expected);
+    }
+
+    /**
      * @dataProvider successDataProvider
      *
      * @param int $limit
@@ -44,6 +59,21 @@ class Trappist1eFacadeTest extends TestCase
      */
     public function testSuccessOptimizedSolution(int $limit, array $expected): void
     {
+        $actual = $this->facade->runOptimizedSolution($limit);
+        $this->assertOutput($actual, $expected);
+    }
+
+    /**
+     * @dataProvider emptyDataProvider
+     *
+     * @param int $limit
+     *
+     * @return void
+     */
+    public function testEmptyOptimizedSolution(int $limit): void
+    {
+        $expected = [];
+
         $actual = $this->facade->runOptimizedSolution($limit);
         $this->assertOutput($actual, $expected);
     }
@@ -62,6 +92,20 @@ class Trappist1eFacadeTest extends TestCase
         }
 
         $this->assertSame($expected, $actualData);
+    }
+
+    /**
+     * @return \int[][]
+     */
+    public function emptyDataProvider(): array
+    {
+        return [
+            [
+                -1,
+            ], [
+                0,
+            ]
+        ];
     }
 
     /**
