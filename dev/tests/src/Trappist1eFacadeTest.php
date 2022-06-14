@@ -94,6 +94,21 @@ class Trappist1eFacadeTest extends TestCase
     }
 
     /**
+     * @dataProvider emptyDataProvider
+     *
+     * @param int $limit
+     *
+     * @return void
+     */
+    public function testEmptyCreativeSolution(int $limit): void
+    {
+        $expected = [];
+
+        $actual = $this->facade->handleCreativeSolution($limit);
+        $this->assertOutput($actual, $expected);
+    }
+
+    /**
      * @return void
      */
     public function testCompareQuickWithCreativeSolutions()
