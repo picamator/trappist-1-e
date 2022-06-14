@@ -19,7 +19,7 @@ class BuzzTransformer implements TransformerInterface
      */
     public function isApplicable(int $item): bool
     {
-        $itemLast = substr((string)$item,-1);
+        $itemLast = substr((string)$item, -1);
 
         return in_array($itemLast, static::DIVISION_RULE);
     }
