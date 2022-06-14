@@ -2,7 +2,7 @@ Trappist-1 e
 ============
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Challenge project with multiple implementation aimed to illustrate:
+Challenge project with multiple solutions aimed to illustrate:
 
 * code style
 * commit message style
