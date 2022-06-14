@@ -31,13 +31,13 @@ class QuickSolution implements SolutionInterface
     {
         switch (true) {
             case $item % 15 === 0:
-                $transformedItem = static::TRANSFORMER_VALUE_FIZZ_BUZZ;
+                $transformedItem = self::TRANSFORMER_VALUE_FIZZ_BUZZ;
                 break;
             case $item % 3 === 0:
-                $transformedItem = static::TRANSFORMER_VALUE_FIZZ;
+                $transformedItem = self::TRANSFORMER_VALUE_FIZZ;
                 break;
             case $item % 5 === 0:
-                $transformedItem = static::TRANSFORMER_VALUE_BUZZ;
+                $transformedItem = self::TRANSFORMER_VALUE_BUZZ;
                 break;
             default:
                 $transformedItem = (string)$item;

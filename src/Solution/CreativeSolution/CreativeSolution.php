@@ -33,7 +33,7 @@ class CreativeSolution implements SolutionInterface
      */
     public function handleSolution(int $limit): Iterator
     {
-        $iterator = new InfiniteIterator(new ArrayIterator(static::TEMPLATE));
+        $iterator = new InfiniteIterator(new ArrayIterator(self::TEMPLATE));
 
         for ($i = 1; $i <= $limit; $i++) {
             $item = $iterator->current() ?? (string)$i;

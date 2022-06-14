@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
+namespace Picamator\Trappist1e\Doc;
+
 use Picamator\Trappist1e\Trappist1eFacade;
 
-include_once '../vendor/autoload.php';
+include_once '../../vendor/autoload.php';
 
 $facade = new Trappist1eFacade();
 

@@ -25,6 +25,6 @@ class FizzTransformer implements TransformerInterface
      */
     public function transformItem(int $item): string
     {
-        return static::TRANSFORM_VALUE;
+        return self::TRANSFORM_VALUE;
     }
 }

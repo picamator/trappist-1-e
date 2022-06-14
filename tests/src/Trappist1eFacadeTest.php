@@ -83,7 +83,7 @@ class Trappist1eFacadeTest extends TestCase
     /**
      * @return void
      */
-    public function testCompareQuickWithOptimizedSolutions()
+    public function testCompareQuickWithOptimizedSolutions(): void
     {
         $limit = 100;
 
@@ -156,7 +156,7 @@ class Trappist1eFacadeTest extends TestCase
     }
 
     /**
-     * @return \int[][]
+     * @return int[][]
      */
     public function emptyDataProvider(): array
     {

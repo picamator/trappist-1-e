@@ -5,15 +5,20 @@ Challenge project with multiple implementation aimed to illustrate:
 * code style
 * commit message style
 * project evolution over releases
-* ideas varieties
+* varieties of ideas
 
 Example
 -------
-Follow [example.php](/doc/example.php) to see usage.
+Follow [Example.php](/doc/src/Example.php) to see usage.
+
+Development
+-----------
+
+1. Run all unit tests `composer test`
+2. Run phpstan `composer phpstan`
 
 ToDo
 ----
-1. [ ] Configurate TravisCI
-2. [ ] Configurate Coveralls
-3. [ ] Cnfigurate SensioLabs
-4. [ ] Add licence & PHP version badges
+1. [ ] Configurate CI
+2. [ ] Configurate Test Coverage
+3. [ ] Add git hooks to run phpstan

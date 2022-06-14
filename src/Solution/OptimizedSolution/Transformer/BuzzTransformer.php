@@ -21,7 +21,7 @@ class BuzzTransformer implements TransformerInterface
     {
         $itemLast = substr((string)$item, -1);
 
-        return in_array($itemLast, static::DIVISION_RULE);
+        return in_array($itemLast, self::DIVISION_RULE);
     }
 
     /**
@@ -29,6 +29,6 @@ class BuzzTransformer implements TransformerInterface
      */
     public function transformItem(int $item): string
     {
-        return static::TRANSFORM_VALUE;
+        return self::TRANSFORM_VALUE;
     }
 }
