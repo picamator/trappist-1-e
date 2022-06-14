@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Picamator\Trappist1e\OptimizedSolution\Transformer;
 
@@ -17,7 +17,7 @@ class BuzzTransformer implements TransformerInterface
      */
     public function isApplicable(int $item): bool
     {
-        $itemLast = substr($item,-1);
+        $itemLast = substr((string)$item,-1);
 
         return in_array($itemLast, static::DIVISION_RULE);
     }

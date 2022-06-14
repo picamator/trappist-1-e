@@ -1,9 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Picamator\Trappist1e\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Picamator\Trappist1e\Exception\InvalidLimitException;
 use Picamator\Trappist1e\Trappist1eFacade;
 use Picamator\Trappist1e\Trappist1eFacadeInterface;
 

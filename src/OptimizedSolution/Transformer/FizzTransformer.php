@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Picamator\Trappist1e\OptimizedSolution\Transformer;
 
@@ -13,7 +13,7 @@ class FizzTransformer implements TransformerInterface
      */
     public function isApplicable(int $item): bool
     {
-        $itemSum = array_sum(str_split($item));
+        $itemSum = array_sum(str_split((string)$item));
 
         return $itemSum % 3 === 0;
     }
