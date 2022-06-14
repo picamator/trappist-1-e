@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Picamator\Trappist1e\OptimizedSolution\Transformer;
+namespace Picamator\Trappist1e\Solution\OptimizedSolution\Transformer;
 
 interface TransformerInterface
 {

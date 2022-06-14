@@ -1,11 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Picamator\Trappist1e\OptimizedSolution;
+namespace Picamator\Trappist1e\Solution\OptimizedSolution;
 
-class OptimizedSolution implements OptimizedSolutionInterface
+use Picamator\Trappist1e\Solution\SolutionInterface;
+
+class OptimizedSolution implements SolutionInterface
 {
     /**
-     * @var \Picamator\Trappist1e\OptimizedSolution\Transformer\TransformerInterface[]
+     * @var \Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\TransformerInterface[]
      */
     private array $transformes;
 
@@ -21,7 +23,7 @@ class OptimizedSolution implements OptimizedSolutionInterface
     /**
      * @inheritDoc
      */
-    public function runOptimizedSolution(int $limit): iterable
+    public function handleSolution(int $limit): iterable
     {
         for ($i = 1; $i <= $limit; $i++) {
             yield $this->transformItem($i);

@@ -11,7 +11,7 @@ class Trappist1eFacade implements Trappist1eFacadeInterface
     {
         return $this->createFactory()
             ->createQuickSolution()
-            ->runQuickSolution($limit);
+            ->handleSolution($limit);
     }
 
     /**
@@ -21,7 +21,7 @@ class Trappist1eFacade implements Trappist1eFacadeInterface
     {
         return $this->createFactory()
             ->createOptimizedSolution()
-            ->runOptimizedSolution($limit);
+            ->handleSolution($limit);
     }
 
     /**

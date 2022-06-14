@@ -1,17 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Picamator\Trappist1e\QuickSolution;
+namespace Picamator\Trappist1e\Solution\QuickSolution;
 
-class QuickSolution implements QuickSolutionInterface
+use Picamator\Trappist1e\Solution\SolutionConstants;
+use Picamator\Trappist1e\Solution\SolutionInterface;
+
+class QuickSolution implements SolutionInterface
 {
-    private const TRANSFORMER_VALUE_FIZZ = 'Fizz';
-    private const TRANSFORMER_VALUE_BUZZ = 'Buzz';
-    private const TRANSFORMER_VALUE_FIZZ_BUZZ = 'FizzBuzz';
+    private const TRANSFORMER_VALUE_FIZZ = SolutionConstants::VALUE_FIZZ;
+    private const TRANSFORMER_VALUE_BUZZ = SolutionConstants::VALUE_BUZZ;
+    private const TRANSFORMER_VALUE_FIZZ_BUZZ = SolutionConstants::VALUE_FIZZ_BUZZ;
 
     /**
      * @inheritDoc
      */
-    public function runQuickSolution(int $limit): iterable
+    public function handleSolution(int $limit): iterable
     {
         for ($i = 1; $i <= $limit; $i++) {
             yield $this->transformItem($i);

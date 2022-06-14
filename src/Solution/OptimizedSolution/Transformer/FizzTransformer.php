@@ -1,10 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Picamator\Trappist1e\OptimizedSolution\Transformer;
+namespace Picamator\Trappist1e\Solution\OptimizedSolution\Transformer;
+
+use Picamator\Trappist1e\Solution\SolutionConstants;
 
 class FizzTransformer implements TransformerInterface
 {
-    private const TRANSFORM_VALUE = 'Fizz';
+    private const TRANSFORM_VALUE = SolutionConstants::VALUE_FIZZ;
 
     /**
      * Division on 3 rule

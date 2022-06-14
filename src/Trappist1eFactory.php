@@ -2,28 +2,27 @@
 
 namespace Picamator\Trappist1e;
 
-use Picamator\Trappist1e\OptimizedSolution\OptimizedSolution;
-use Picamator\Trappist1e\OptimizedSolution\OptimizedSolutionInterface;
-use Picamator\Trappist1e\OptimizedSolution\Transformer\BuzzTransformer;
-use Picamator\Trappist1e\OptimizedSolution\Transformer\FizzTransformer;
-use Picamator\Trappist1e\OptimizedSolution\Transformer\TransformerInterface;
-use Picamator\Trappist1e\QuickSolution\QuickSolution;
-use Picamator\Trappist1e\QuickSolution\QuickSolutionInterface;
+use Picamator\Trappist1e\Solution\OptimizedSolution\OptimizedSolution;
+use Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\BuzzTransformer;
+use Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\FizzTransformer;
+use Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\TransformerInterface;
+use Picamator\Trappist1e\Solution\QuickSolution\QuickSolution;
+use Picamator\Trappist1e\Solution\SolutionInterface;
 
 class Trappist1eFactory
 {
     /**
-     * @return QuickSolutionInterface
+     * @return SolutionInterface
      */
-    public function createQuickSolution(): QuickSolutionInterface
+    public function createQuickSolution(): SolutionInterface
     {
         return new QuickSolution();
     }
 
     /**
-     * @return OptimizedSolutionInterface
+     * @return SolutionInterface
      */
-    public function createOptimizedSolution(): OptimizedSolutionInterface
+    public function createOptimizedSolution(): SolutionInterface
     {
         return new OptimizedSolution([
             $this->createFizzTransformer(),

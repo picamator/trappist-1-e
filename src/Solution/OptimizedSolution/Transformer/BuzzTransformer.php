@@ -1,10 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Picamator\Trappist1e\OptimizedSolution\Transformer;
+namespace Picamator\Trappist1e\Solution\OptimizedSolution\Transformer;
+
+use Picamator\Trappist1e\Solution\SolutionConstants;
 
 class BuzzTransformer implements TransformerInterface
 {
-    private const TRANSFORM_VALUE = 'Buzz';
+    private const TRANSFORM_VALUE = SolutionConstants::VALUE_BUZZ;
     private const DIVISION_RULE = [
         '0',
         '5',
