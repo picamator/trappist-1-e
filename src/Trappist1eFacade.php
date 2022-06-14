@@ -2,12 +2,14 @@
 
 namespace Picamator\Trappist1e;
 
+use Iterator;
+
 class Trappist1eFacade implements Trappist1eFacadeInterface
 {
     /**
      * @inheritDoc
      */
-    public function runQuickSolution(int $limit): iterable
+    public function runQuickSolution(int $limit): Iterator
     {
         return $this->createFactory()
             ->createQuickSolution()
@@ -17,7 +19,7 @@ class Trappist1eFacade implements Trappist1eFacadeInterface
     /**
      * @inheritDoc
      */
-    public function runOptimizedSolution(int $limit): iterable
+    public function runOptimizedSolution(int $limit): Iterator
     {
         return $this->createFactory()
             ->createOptimizedSolution()

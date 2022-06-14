@@ -2,6 +2,8 @@
 
 namespace Picamator\Trappist1e\Tests;
 
+use Iterator;
+use MultipleIterator;
 use PHPUnit\Framework\TestCase;
 use Picamator\Trappist1e\Trappist1eFacade;
 use Picamator\Trappist1e\Trappist1eFacadeInterface;
@@ -76,6 +78,37 @@ class Trappist1eFacadeTest extends TestCase
 
         $actual = $this->facade->runOptimizedSolution($limit);
         $this->assertOutput($actual, $expected);
+    }
+
+    /**
+     * @return void
+     */
+    public function testCompareQuickWithOptimizedSolutions()
+    {
+        $limit = 100;
+
+        $quickSolution = $this->facade->runQuickSolution($limit);
+        $optimizedSolution = $this->facade->runOptimizedSolution($limit);
+
+        $this->assertSameSolutions($quickSolution, $optimizedSolution);
+    }
+
+    /**
+     * @param Iterator $solutionA
+     * @param Iterator $solutionB
+     *
+     * @return void
+     */
+    private function assertSameSolutions(Iterator $solutionA, Iterator $solutionB): void
+    {
+        $multipleIterator = new MultipleIterator(MultipleIterator::MIT_NEED_ALL|MultipleIterator::MIT_KEYS_ASSOC);
+
+        $multipleIterator->attachIterator($solutionA, 'solutionA');
+        $multipleIterator->attachIterator($solutionB, 'solutionB');
+
+        foreach ($multipleIterator as $item) {
+            $this->assertSame($item['solutionA'], $item['solutionB']);
+        }
     }
 
     /**

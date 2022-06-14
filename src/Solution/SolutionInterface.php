@@ -2,12 +2,14 @@
 
 namespace Picamator\Trappist1e\Solution;
 
+use Iterator;
+
 interface SolutionInterface
 {
     /**
      * @param int $limit
      *
-     * @return iterable|string[]
+     * @return Iterator
      */
-    public function handleSolution(int $limit): iterable;
+    public function handleSolution(int $limit): Iterator;
 }

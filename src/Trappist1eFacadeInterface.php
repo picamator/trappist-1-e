@@ -2,6 +2,8 @@
 
 namespace Picamator\Trappist1e;
 
+use Iterator;
+
 interface Trappist1eFacadeInterface
 {
     /**
@@ -11,9 +13,9 @@ interface Trappist1eFacadeInterface
      *
      * @param int $limit
      *
-     * @return iterable|string[]
+     * @return Iterator
      */
-    public function runQuickSolution(int $limit): iterable;
+    public function runQuickSolution(int $limit): Iterator;
 
     /**
      * Specification:
@@ -22,7 +24,7 @@ interface Trappist1eFacadeInterface
      *
      * @param int $limit
      *
-     * @return iterable|string[]
+     * @return Iterator
      */
-    public function runOptimizedSolution(int $limit): iterable;
+    public function runOptimizedSolution(int $limit): Iterator;
 }

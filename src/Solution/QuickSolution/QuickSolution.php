@@ -2,6 +2,7 @@
 
 namespace Picamator\Trappist1e\Solution\QuickSolution;
 
+use Iterator;
 use Picamator\Trappist1e\Solution\SolutionConstants;
 use Picamator\Trappist1e\Solution\SolutionInterface;
 
@@ -14,7 +15,7 @@ class QuickSolution implements SolutionInterface
     /**
      * @inheritDoc
      */
-    public function handleSolution(int $limit): iterable
+    public function handleSolution(int $limit): Iterator
     {
         for ($i = 1; $i <= $limit; $i++) {
             yield $this->transformItem($i);
