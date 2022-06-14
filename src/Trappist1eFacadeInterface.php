@@ -8,7 +8,7 @@ interface Trappist1eFacadeInterface
 {
     /**
      * Specification:
-     * - Execute quick solution providing number of iterator's elements
+     * - Execute quick solution providing number of iterators elements
      * - Parameter limit should be more or equal 1
      *
      * @param int $limit
@@ -19,7 +19,7 @@ interface Trappist1eFacadeInterface
 
     /**
      * Specification:
-     * - Execute optimized solution providing number of iterator's elements
+     * - Execute optimized solution providing number of iterators elements
      * - Parameter limit should be more or equal 1
      *
      * @param int $limit
@@ -30,7 +30,7 @@ interface Trappist1eFacadeInterface
 
     /**
      * Specification:
-     * - Execute creative solution providing number of iterator's elements
+     * - Execute creative solution providing number of iterators elements
      * - Parameter limit should be more or equal 1
      *
      * @param int $limit

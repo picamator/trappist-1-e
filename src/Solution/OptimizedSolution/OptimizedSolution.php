@@ -10,14 +10,14 @@ class OptimizedSolution implements SolutionInterface
     /**
      * @var \Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\TransformerInterface[]
      */
-    private array $transformes;
+    private array $transformers;
 
     /**
      * @param \Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\TransformerInterface[] $transformers
      */
     public function __construct(array $transformers)
     {
-        $this->transformes = $transformers;
+        $this->transformers = $transformers;
     }
 
     /**
@@ -38,7 +38,7 @@ class OptimizedSolution implements SolutionInterface
     private function transformItem(int $item): string
     {
         $transformedItem = null;
-        foreach ($this->transformes as $transformer) {
+        foreach ($this->transformers as $transformer) {
             if ($transformer->isApplicable($item)) {
                 $transformedItem .= $transformer->transformItem($item);
             }
