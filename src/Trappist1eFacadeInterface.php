@@ -15,7 +15,7 @@ interface Trappist1eFacadeInterface
      *
      * @return Iterator
      */
-    public function runQuickSolution(int $limit): Iterator;
+    public function handleQuickSolution(int $limit): Iterator;
 
     /**
      * Specification:
@@ -26,5 +26,16 @@ interface Trappist1eFacadeInterface
      *
      * @return Iterator
      */
-    public function runOptimizedSolution(int $limit): Iterator;
+    public function handleOptimizedSolution(int $limit): Iterator;
+
+    /**
+     * Specification:
+     * - Execute creative solution providing number of iterator's elements
+     * - Parameter limit should be more or equal 1
+     *
+     * @param int $limit
+     *
+     * @return Iterator
+     */
+    public function handleCreativeSolution(int $limit): Iterator;
 }

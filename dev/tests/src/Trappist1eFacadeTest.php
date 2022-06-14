@@ -32,7 +32,7 @@ class Trappist1eFacadeTest extends TestCase
      */
     public function testSuccessQuickSolution(int $limit, array $expected): void
     {
-        $actual = $this->facade->runQuickSolution($limit);
+        $actual = $this->facade->handleQuickSolution($limit);
         $this->assertOutput($actual, $expected);
     }
 
@@ -47,7 +47,7 @@ class Trappist1eFacadeTest extends TestCase
     {
         $expected = [];
 
-        $actual = $this->facade->runQuickSolution($limit);
+        $actual = $this->facade->handleQuickSolution($limit);
         $this->assertOutput($actual, $expected);
     }
 
@@ -61,7 +61,7 @@ class Trappist1eFacadeTest extends TestCase
      */
     public function testSuccessOptimizedSolution(int $limit, array $expected): void
     {
-        $actual = $this->facade->runOptimizedSolution($limit);
+        $actual = $this->facade->handleOptimizedSolution($limit);
         $this->assertOutput($actual, $expected);
     }
 
@@ -76,7 +76,7 @@ class Trappist1eFacadeTest extends TestCase
     {
         $expected = [];
 
-        $actual = $this->facade->runOptimizedSolution($limit);
+        $actual = $this->facade->handleOptimizedSolution($limit);
         $this->assertOutput($actual, $expected);
     }
 
@@ -87,10 +87,23 @@ class Trappist1eFacadeTest extends TestCase
     {
         $limit = 100;
 
-        $quickSolution = $this->facade->runQuickSolution($limit);
-        $optimizedSolution = $this->facade->runOptimizedSolution($limit);
+        $quickSolution = $this->facade->handleQuickSolution($limit);
+        $optimizedSolution = $this->facade->handleOptimizedSolution($limit);
 
         $this->assertSameSolutions($quickSolution, $optimizedSolution);
+    }
+
+    /**
+     * @return void
+     */
+    public function testCompareQuickWithCreativeSolutions()
+    {
+        $limit = 100;
+
+        $quickSolution = $this->facade->handleQuickSolution($limit);
+        $creativeSolution = $this->facade->handleCreativeSolution($limit);
+
+        $this->assertSameSolutions($quickSolution, $creativeSolution);
     }
 
     /**

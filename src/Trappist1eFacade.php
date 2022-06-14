@@ -9,7 +9,7 @@ class Trappist1eFacade implements Trappist1eFacadeInterface
     /**
      * @inheritDoc
      */
-    public function runQuickSolution(int $limit): Iterator
+    public function handleQuickSolution(int $limit): Iterator
     {
         return $this->createFactory()
             ->createQuickSolution()
@@ -19,10 +19,20 @@ class Trappist1eFacade implements Trappist1eFacadeInterface
     /**
      * @inheritDoc
      */
-    public function runOptimizedSolution(int $limit): Iterator
+    public function handleOptimizedSolution(int $limit): Iterator
     {
         return $this->createFactory()
             ->createOptimizedSolution()
+            ->handleSolution($limit);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function handleCreativeSolution(int $limit): Iterator
+    {
+        return $this->createFactory()
+            ->createCreativeSolution()
             ->handleSolution($limit);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Picamator\Trappist1e;
 
+use Picamator\Trappist1e\Solution\CreativeSolution\CreativeSolution;
 use Picamator\Trappist1e\Solution\OptimizedSolution\OptimizedSolution;
 use Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\BuzzTransformer;
 use Picamator\Trappist1e\Solution\OptimizedSolution\Transformer\FizzTransformer;
@@ -28,6 +29,14 @@ class Trappist1eFactory
             $this->createFizzTransformer(),
             $this->createBuzzTransformer(),
         ]);
+    }
+
+    /**
+     * @return SolutionInterface
+     */
+    public function createCreativeSolution(): SolutionInterface
+    {
+        return new CreativeSolution();
     }
 
     /**

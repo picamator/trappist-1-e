@@ -1,10 +1,15 @@
 Trappist-1 e
 ============
-Challenge project with two solutions.
+Challenge project with multiple implementation aimed to illustrate:
+
+* code style
+* commit message style
+* project evolution over releases
+* ideas varieties
 
 Example
 -------
-Open [exmpale.php](/doc/example.php) to see usage.
+Follow [example.php](/doc/example.php) to see usage.
 
 ToDo
 ----
